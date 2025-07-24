@@ -2,8 +2,6 @@
   "name": "Multilang Dev",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers/features/cpp:1": {},
-    "ghcr.io/devcontainers/features/fpc:1": {},
     "ghcr.io/devcontainers/features/dotnet:1": {
       "version": "7.0"
     },
@@ -21,7 +19,11 @@
       "version": "18"
     }
   },
-  "postCreateCommand": "npm install -g solc && curl -s https://downloads.sourceforge.net/project/fbc/FreeBASIC-1.10.0-linux-x86_64.tar.gz | tar xz && cd FreeBASIC-1.10.0-linux-x86_64 && sudo ./install.sh -i && cd .. && rm -rf FreeBASIC-1.10.0-linux-x86_64",
+  "postCreateCommand": "\
+    npm install -g solc && \
+    curl -sL https://downloads.sourceforge.net/project/fbc/FreeBASIC-1.10.0-linux-x86_64.tar.gz | tar xz && \
+    cd FreeBASIC-1.10.0-linux-x86_64 && sudo ./install.sh -i && \
+    cd .. && rm -rf FreeBASIC-1.10.0-linux-x86_64",
   "customizations": {
     "vscode": {
       "extensions": [
